@@ -154,7 +154,15 @@ h1 { margin: 0 0 10px; }
 .el:hover { outline: 2px solid #000; cursor: pointer; }
 .num { font-size: 10px; opacity:.7; }
 .sym { font-size: 18px; font-weight:700; line-height:1.1; }
-.name { font-size: 10px; opacity:.85; }
+.name {
+  font-size: 10px;
+  opacity: .85;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;   /* the "..." effect */
+  white-space: nowrap;       /* keeps it on one line */
+}
 .spacer { visibility:hidden; }
 .alkali { background:#ffe7e7; }
 .alkaline { background:#fff1d6; }
@@ -201,19 +209,25 @@ h1 { margin: 0 0 10px; }
   const idx = (r,c)=> (r-1)*18+(c-1);
 
   function paint(list) {
-    [...grid.children].forEach(x=>{ x.className="el spacer"; x.innerHTML=""; x.onclick=null; });
-    for (const e of list) {
-      const i = idx(e.period, e.group);
-      if (i<0 || i>=grid.children.length) continue;
-      const cell = grid.children[i];
-      cell.className = "el " + (e.cat||"");
-      cell.innerHTML = `
-        <div class="num">${e.Z}</div>
-        <div class="sym">${e.sym}</div>
-        <div class="name">${e.name}</div>`;
-      cell.onclick = ()=> show(e);
-    }
+  [...grid.children].forEach(x => { 
+    x.className = "el spacer"; 
+    x.innerHTML = ""; 
+    x.onclick = null; 
+  });
+  for (const e of list) {
+    const i = idx(e.period, e.group);
+    if (i < 0 || i >= grid.children.length) continue;
+    const cell = grid.children[i];
+    cell.className = "el " + (e.cat || "");
+    cell.innerHTML = `
+  <div class="num">${e.Z}</div>
+  <div class="sym">${e.sym}</div>
+  <div class="name">${e.name}</div>`;
+cell.title = `${e.name} (${e.sym})`;   // ← tooltip on the whole box
+cell.onclick = () => show(e);
   }
+}
+
 
   function show(e) {
     details.innerHTML = `<b>${e.name} (${e.sym})</b><br>
