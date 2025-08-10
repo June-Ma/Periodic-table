@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Periodic Table</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Periodic Table</h1>
+    <div class="legend">
+        <span class="chip alkali">Alkali</span>
+        <span class="chip alkaline">Alkaline earth</span>
+        <span class="chip transition">Transition</span>
+        <span class="chip posttransition">Post-transition</span>
+        <span class="chip metalloid">Metalloid</span>
+        <span class="chip nonmetal">Non-metal</span>
+        <span class="chip noble">Noble gas</span>
+        <span class="chip lanth">Lanthanide</span>
+        <span class="chip act">Actinide</span>
+    </div>
+    <input id="search" placeholder="Search name or symbol…"/>
+    <div class="small">All 118 elements displayed</div>
+
+    <div class="grid" id="table"></div>
+    
+    <!-- Lanthanides and Actinides -->
+    <div class="f-block-container">
+        <div class="f-block-label">Lanthanides</div>
+        <div class="f-block" id="lanthanides"></div>
+    </div>
+    <div class="f-block-container">
+        <div class="f-block-label">Actinides</div>
+        <div class="f-block" id="actinides"></div>
+    </div>
+    
+    <div id="details">Click an element to see details.</div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

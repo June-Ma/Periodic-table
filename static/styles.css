@@ -1,0 +1,154 @@
+:root {
+    --cell: 64px;
+    --gap: 6px;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+body {
+    margin: 20px;
+}
+
+h1 {
+    margin: 0 0 10px;
+}
+
+.legend {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.chip {
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(18, var(--cell));
+    gap: var(--gap);
+}
+
+.el {
+    width: var(--cell);
+    height: var(--cell);
+    border-radius: 8px;
+    padding: 6px;
+    box-sizing: border-box;
+    background: #f6f6f6;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.el:hover {
+    outline: 2px solid #000;
+}
+
+.num {
+    font-size: 10px;
+    opacity: .7;
+}
+
+.sym {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.name {
+    font-size: 10px;
+    opacity: .85;
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.spacer {
+    visibility: hidden;
+    cursor: default;
+}
+
+.alkali {
+    background: linear-gradient(135deg, #ffe5ec 60%, #ffd6e0 100%);
+}
+
+.alkaline {
+    background: linear-gradient(135deg, #fffbe7 60%, #ffecc2 100%);
+}
+
+.transition {
+    background: linear-gradient(135deg, #e3f6fd 60%, #c9e7fa 100%);
+}
+
+.posttransition {
+    background: linear-gradient(135deg, #e6eaf3 60%, #bfc9d9 100%);
+}
+
+.metalloid {
+    background: linear-gradient(135deg, #e6f9e6 60%, #c8f2c8 100%);
+}
+
+.nonmetal {
+    background: linear-gradient(135deg, #f3eaff 60%, #e0d6fa 100%);
+}
+
+.noble {
+    background: linear-gradient(135deg, #e7fff6 60%, #c2ffe9 100%);
+}
+
+.lanth {
+    background: linear-gradient(135deg, #f8eaff 60%, #e6d6fa 100%);
+}
+
+.act {
+    background: linear-gradient(135deg, #fff6e7 60%, #ffe9c2 100%);
+}
+
+#search {
+    margin: 8px 0 12px;
+    padding: 8px 10px;
+    width: min(420px, 90%);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+#details {
+    margin-top: 16px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #f9f9f9;
+}
+
+.small {
+    font-size: 12px;
+    opacity: .75;
+}
+
+/* Lanthanides and Actinides sections */
+.f-block-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.f-block-label {
+    width: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: right;
+    opacity: 0.8;
+}
+
+.f-block {
+    display: grid;
+    grid-template-columns: repeat(15, var(--cell));
+    gap: var(--gap);
+}
