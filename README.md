@@ -1,4 +1,4 @@
-# Periodic Table
+# 🧪Periodic Table
 
 An interactive periodic table web application built with Flask and vanilla JavaScript.
 
